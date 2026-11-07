@@ -1,26 +1,28 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type { CheckIn, Challenge } from '../types'
+import type { CheckIn, Challenge, DonationCategory, GoodsType } from '../types'
 import { challenges as initialChallenges } from '../data/challenges'
 import { users as initialUsers } from '../data/users'
 import { advanceDay as advanceDayDomain } from '../domain/advanceDay'
+import { createGoodsOrder } from '../domain/goods'
 import { CURRENT_USER_ID } from '../domain/constants'
 
 interface AppState {
   users: typeof initialUsers
   challenges: Challenge[]
-  lastGraduatedChallengeId: string | null
+  lastCompletedChallengeId: string | null
 
   checkIn: (challengeId: string, data: Omit<CheckIn, 'userId' | 'day'>) => void
   advanceDay: (challengeId: string) => void
+  reserveGoods: (challengeId: string, type: GoodsType, donationCategory: DonationCategory) => void
   resetDemo: () => void
-  clearLastGraduated: () => void
+  clearLastCompleted: () => void
 }
 
 function cloneInitialChallenges(): Challenge[] {
   return initialChallenges.map((c) => ({
     ...c,
-    character: { ...c.character, parts: [...c.character.parts] },
+    character: { ...c.character, parts: { ...c.character.parts } },
     checkIns: [...c.checkIns],
     memberIds: [...c.memberIds],
   }))
@@ -31,7 +33,7 @@ export const useAppStore = create<AppState>()(
     (set, get) => ({
       users: initialUsers,
       challenges: cloneInitialChallenges(),
-      lastGraduatedChallengeId: null,
+      lastCompletedChallengeId: null,
 
       checkIn: (challengeId, data) => {
         set((state) => ({
@@ -56,13 +58,24 @@ export const useAppStore = create<AppState>()(
       },
 
       advanceDay: (challengeId) => {
-        const challenge = get().challenges.find((c) => c.id === challengeId)
+        const { challenges, users } = get()
+        const challenge = challenges.find((c) => c.id === challengeId)
         if (!challenge) return
 
-        const { challenge: updated, graduated } = advanceDayDomain(challenge)
+        const { challenge: updated, completed } = advanceDayDomain(challenge, users)
         set((state) => ({
           challenges: state.challenges.map((c) => (c.id === challengeId ? updated : c)),
-          lastGraduatedChallengeId: graduated ? challengeId : state.lastGraduatedChallengeId,
+          lastCompletedChallengeId: completed ? challengeId : state.lastCompletedChallengeId,
+        }))
+      },
+
+      reserveGoods: (challengeId, type, donationCategory) => {
+        set((state) => ({
+          challenges: state.challenges.map((c) =>
+            c.id === challengeId
+              ? { ...c, goodsOrder: createGoodsOrder(type, donationCategory) }
+              : c,
+          ),
         }))
       },
 
@@ -70,11 +83,11 @@ export const useAppStore = create<AppState>()(
         set({
           users: initialUsers,
           challenges: cloneInitialChallenges(),
-          lastGraduatedChallengeId: null,
+          lastCompletedChallengeId: null,
         })
       },
 
-      clearLastGraduated: () => set({ lastGraduatedChallengeId: null }),
+      clearLastCompleted: () => set({ lastCompletedChallengeId: null }),
     }),
     { name: 'moa-demo-store' },
   ),

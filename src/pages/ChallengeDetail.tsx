@@ -1,8 +1,10 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
-import { calcGrowthStage, calcProgress } from '../domain/progress'
-import { calcMood } from '../domain/mood'
-import { calcCurrentCrewCombo } from '../domain/combo'
+import { bodyFill, partProgress } from '../domain/progress'
+import { traces } from '../domain/traces'
+import { goodTraces } from '../domain/goodTraces'
+import { PART_IDS } from '../types'
+import { PART_LABELS } from '../domain/constants'
 
 export default function ChallengeDetail() {
   const { id } = useParams<{ id: string }>()
@@ -17,10 +19,8 @@ export default function ChallengeDetail() {
     )
   }
 
-  const progress = calcProgress(challenge)
-  const stage = calcGrowthStage(progress)
-  const mood = calcMood(challenge, challenge.currentDay)
-  const combo = calcCurrentCrewCombo(challenge)
+  const fill = bodyFill(challenge)
+  const sparkles = goodTraces(challenge)
 
   return (
     <div className="flex h-full flex-col p-4">
@@ -29,17 +29,29 @@ export default function ChallengeDetail() {
       </button>
       <h1 className="mt-2 text-xl font-bold">{challenge.title}</h1>
       <p className="text-sm text-gray-500">
-        {challenge.currentDay}/{challenge.totalDays}일차 · 단계 {stage} · 진행률{' '}
-        {Math.round(progress * 100)}% · 기분 {mood} · 크루 콤보 {combo}일
+        {challenge.currentDay}/{challenge.totalDays}일차 · 완성도 {Math.round(fill * 100)}% · 좋은
+        흔적 {sparkles}개
       </p>
 
-      <div className="mt-6 flex flex-1 items-center justify-center text-gray-400">
-        (Phase 2에서 캐릭터, 인증 피드 구현)
+      <div className="mt-4 space-y-2">
+        {PART_IDS.map((partId) => {
+          const progress = partProgress(challenge, partId)
+          const trace = traces(challenge, partId)
+          return (
+            <div key={partId} className="flex items-center justify-between rounded-lg border border-gray-100 p-2 text-sm">
+              <span>{PART_LABELS[partId]}</span>
+              <span className="text-gray-500">
+                {Math.round(progress * 100)}% · 흔적 {trace.missedCount}회
+                {trace.wavy ? ' (물결)' : trace.rotate ? ' (기울어짐)' : ''}
+              </span>
+            </div>
+          )
+        })}
       </div>
 
       <button
         onClick={() => navigate(`/challenge/${challenge.id}/checkin`)}
-        className="rounded-full bg-pink-500 py-3 font-medium text-white"
+        className="mt-6 rounded-full bg-pink-500 py-3 font-medium text-white"
       >
         인증하기
       </button>

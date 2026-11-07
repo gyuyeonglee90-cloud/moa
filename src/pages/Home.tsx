@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
-import { calcGrowthStage, calcProgress } from '../domain/progress'
+import { bodyFill } from '../domain/progress'
 import BottomTabs from '../components/BottomTabs'
 
 export default function Home() {
@@ -16,8 +16,7 @@ export default function Home() {
 
       <div className="flex-1 space-y-3 overflow-y-auto p-4">
         {ongoing.map((challenge) => {
-          const progress = calcProgress(challenge)
-          const stage = calcGrowthStage(progress)
+          const fill = bodyFill(challenge)
           return (
             <button
               key={challenge.id}
@@ -26,8 +25,7 @@ export default function Home() {
             >
               <div className="font-semibold">{challenge.title}</div>
               <div className="text-sm text-gray-500">
-                {challenge.currentDay}/{challenge.totalDays}일차 · 성장 단계 {stage} ·{' '}
-                {Math.round(progress * 100)}%
+                {challenge.currentDay}/{challenge.totalDays}일차 · 완성도 {Math.round(fill * 100)}%
               </div>
             </button>
           )

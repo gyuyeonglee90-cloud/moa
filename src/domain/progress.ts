@@ -1,18 +1,16 @@
-import type { Challenge, GrowthStage } from '../types'
+import type { Challenge, PartId } from '../types'
+import { countPartCheckedInDays } from './attendance'
 
-/** 진행률 = 크루 전체 누적 인증 수 / (인원 × 기간일수), 0~1 범위로 클램프 */
-export function calcProgress(challenge: Challenge): number {
-  const denominator = challenge.memberIds.length * challenge.totalDays
-  if (denominator === 0) return 0
-  const progress = challenge.checkIns.length / denominator
-  return Math.min(1, Math.max(0, progress))
+/** 부위가 목표만큼 그려진 비율 = 담당자 인증 일수 ÷ 기간(totalDays), 0~1 */
+export function partProgress(challenge: Challenge, partId: PartId): number {
+  if (challenge.totalDays === 0) return 0
+  const checkedInDays = countPartCheckedInDays(challenge, partId)
+  return Math.min(1, checkedInDays / challenge.totalDays)
 }
 
-/** 진행률(0~1)로 성장 단계(0~3)를 결정한다 */
-export function calcGrowthStage(progress: number): GrowthStage {
-  const percent = progress * 100
-  if (percent >= 85) return 3
-  if (percent >= 50) return 2
-  if (percent >= 20) return 1
-  return 0
+/** 몸통 색이 차오르는 비율 = 크루 전체 누적 인증 수 / (인원 x 기간일수), 0~1 */
+export function bodyFill(challenge: Challenge): number {
+  const denominator = challenge.memberIds.length * challenge.totalDays
+  if (denominator === 0) return 0
+  return Math.min(1, challenge.checkIns.length / denominator)
 }

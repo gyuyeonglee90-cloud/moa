@@ -7,8 +7,8 @@ export default function DemoControls() {
   const challenges = useAppStore((s) => s.challenges)
   const advanceDay = useAppStore((s) => s.advanceDay)
   const resetDemo = useAppStore((s) => s.resetDemo)
-  const lastGraduatedChallengeId = useAppStore((s) => s.lastGraduatedChallengeId)
-  const clearLastGraduated = useAppStore((s) => s.clearLastGraduated)
+  const lastCompletedChallengeId = useAppStore((s) => s.lastCompletedChallengeId)
+  const clearLastCompleted = useAppStore((s) => s.clearLastCompleted)
 
   const firstOngoing = challenges.find((c) => c.status === 'ongoing')
 
@@ -23,11 +23,11 @@ export default function DemoControls() {
   }
 
   useEffect(() => {
-    if (!lastGraduatedChallengeId) return
-    const id = lastGraduatedChallengeId
-    clearLastGraduated()
-    navigate(`/graduation/${id}`)
-  }, [lastGraduatedChallengeId, clearLastGraduated, navigate])
+    if (!lastCompletedChallengeId) return
+    const id = lastCompletedChallengeId
+    clearLastCompleted()
+    navigate(`/completion/${id}`)
+  }, [lastCompletedChallengeId, clearLastCompleted, navigate])
 
   return (
     <div className="fixed bottom-16 right-3 z-50 flex flex-col gap-2">

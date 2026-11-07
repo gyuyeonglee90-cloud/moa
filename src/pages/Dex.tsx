@@ -5,7 +5,7 @@ import BottomTabs from '../components/BottomTabs'
 export default function Dex() {
   const navigate = useNavigate()
   const challenges = useAppStore((s) => s.challenges)
-  const graduated = challenges.filter((c) => c.status === 'graduated')
+  const completed = challenges.filter((c) => c.status === 'completed')
 
   return (
     <div className="flex h-full flex-col pb-16">
@@ -14,11 +14,11 @@ export default function Dex() {
       </header>
 
       <div className="flex-1 overflow-y-auto p-4">
-        {graduated.length === 0 ? (
-          <p className="text-gray-400">아직 졸업한 캐릭터가 없어요.</p>
+        {completed.length === 0 ? (
+          <p className="text-gray-400">아직 완성한 캐릭터가 없어요.</p>
         ) : (
           <div className="grid grid-cols-2 gap-3">
-            {graduated.map((challenge) => (
+            {completed.map((challenge) => (
               <button
                 key={challenge.id}
                 onClick={() => navigate(`/dex/${challenge.id}`)}

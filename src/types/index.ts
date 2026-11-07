@@ -1,4 +1,4 @@
-export type BodyShape = 'round' | 'squishy' | 'spiky'
+export type Template = 'round' | 'soft' | 'chubby'
 
 export type BodyColor =
   | 'pink'
@@ -8,25 +8,24 @@ export type BodyColor =
   | 'purple'
   | 'orange'
 
-export type PartCategory = 'hat' | 'eyes' | 'cheeks' | 'accessory'
+export type PartId = 'hair' | 'eyeL' | 'eyeR' | 'cheek' | 'mouth'
 
-export interface CharacterPart {
-  category: PartCategory
-  variant: string
-  addedBy: string // userId
-}
+export const PART_IDS: PartId[] = ['hair', 'eyeL', 'eyeR', 'cheek', 'mouth']
+
+/** 부위 담당자. 전원 인증한 날만 그려지는 '공동' 부위는 'shared' */
+export type PartOwner = string | 'shared'
 
 export interface CharacterConfig {
-  bodyShape: BodyShape
-  bodyColor: BodyColor
-  parts: CharacterPart[]
+  template: Template
+  color: BodyColor
+  parts: Record<PartId, PartOwner>
   name: string
 }
 
 export interface User {
   id: string
   nickname: string
-  emoji: string // 아바타로 쓰는 이모지
+  emoji: string
 }
 
 export interface CheckIn {
@@ -37,6 +36,8 @@ export interface CheckIn {
   memo?: string
 }
 
+export type ChallengeStatus = 'ongoing' | 'completed'
+
 export interface Challenge {
   id: string
   title: string
@@ -46,19 +47,46 @@ export interface Challenge {
   ownerId: string // 챌린지를 만든 사람
   character: CharacterConfig
   checkIns: CheckIn[]
-  status: 'ongoing' | 'graduated'
-  graduationResult?: GraduationResult
+  status: ChallengeStatus
+  completionResult?: CompletionResult
+  goodsOrder?: GoodsOrder
 }
 
-export type GrowthStage = 0 | 1 | 2 | 3
+/** 부위에 쌓인 흔적의 시각적 상태 */
+export interface PartTrace {
+  partId: PartId
+  missedCount: number
+  scale: number // 1 = 원래 크기
+  rotate: number // deg
+  wavy: boolean
+}
 
-export type Mood = 'great' | 'okay' | 'low'
+export type HistoryEventType = 'trace' | 'good'
 
-export interface GraduationResult {
-  finalStage: GrowthStage
-  finalProgress: number // 0~1
+export interface HistoryEvent {
+  day: number
+  type: HistoryEventType
+  partId?: PartId // trace 이벤트일 때만
+  userId?: string // 흔적을 남긴 담당자 (shared면 undefined)
+  message: string
+}
+
+export interface CompletionResult {
+  similarity: number // 0~100, 흔적이 없을수록 100에 가까움
   totalCheckIns: number
-  bestCrewCombo: number
-  perfectAttendanceUserId: string | null // 개근상 (최다 인증 멤버)
+  goodTraces: number // 전원 인증한 날 수 (최대 7)
+  partTraces: PartTrace[]
+  history: HistoryEvent[]
   completedAt: string // ISO date string
+}
+
+export type GoodsType = 'sticker' | 'keyring' | 'grip' | 'doll'
+
+export type DonationCategory = 'children' | 'animal' | 'environment'
+
+export interface GoodsOrder {
+  type: GoodsType
+  donationCategory: DonationCategory
+  reservedAt: string // ISO date string
+  status: 'reserved'
 }

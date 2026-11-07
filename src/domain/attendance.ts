@@ -1,19 +1,29 @@
-import type { Challenge } from '../types'
+import type { Challenge, PartId, PartOwner } from '../types'
 
-/** 가장 많이 인증한 멤버의 userId를 반환한다(개근상). 동률이면 멤버 목록 순서상 먼저 나온 사람, 인증이 하나도 없으면 null */
-export function calcPerfectAttendanceUserId(challenge: Challenge): string | null {
-  if (challenge.checkIns.length === 0) return null
+export function getPartOwner(challenge: Challenge, partId: PartId): PartOwner {
+  return challenge.character.parts[partId]
+}
 
-  let bestUserId: string | null = null
-  let bestCount = 0
+/** 해당 일차에 크루 전원이 인증했는지 */
+export function isFullAttendanceDay(challenge: Challenge, day: number): boolean {
+  const memberCount = challenge.memberIds.length
+  if (memberCount === 0) return false
+  const checkedInCount = challenge.checkIns.filter((c) => c.day === day).length
+  return checkedInCount >= memberCount
+}
 
-  for (const userId of challenge.memberIds) {
-    const count = challenge.checkIns.filter((c) => c.userId === userId).length
-    if (count > bestCount) {
-      bestCount = count
-      bestUserId = userId
-    }
+/** 해당 일차에 그 부위가 그려졌는지(담당자가 인증, 공동이면 전원 인증) */
+export function isPartCheckedInOnDay(challenge: Challenge, partId: PartId, day: number): boolean {
+  const owner = getPartOwner(challenge, partId)
+  if (owner === 'shared') return isFullAttendanceDay(challenge, day)
+  return challenge.checkIns.some((c) => c.userId === owner && c.day === day)
+}
+
+/** 지금까지(1~currentDay) 그 부위가 그려진 일수 */
+export function countPartCheckedInDays(challenge: Challenge, partId: PartId): number {
+  let count = 0
+  for (let day = 1; day <= challenge.currentDay; day++) {
+    if (isPartCheckedInOnDay(challenge, partId, day)) count++
   }
-
-  return bestUserId
+  return count
 }

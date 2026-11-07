@@ -4,9 +4,10 @@ import Home from './pages/Home'
 import ChallengeCreate from './pages/ChallengeCreate'
 import ChallengeDetail from './pages/ChallengeDetail'
 import CheckIn from './pages/CheckIn'
-import Graduation from './pages/Graduation'
+import Completion from './pages/Completion'
 import Dex from './pages/Dex'
 import DexDetail from './pages/DexDetail'
+import GoodsCreate from './pages/GoodsCreate'
 import DemoControls from './components/DemoControls'
 
 export default function App() {
@@ -20,9 +21,10 @@ export default function App() {
           <Route path="/challenge/new" element={<ChallengeCreate />} />
           <Route path="/challenge/:id" element={<ChallengeDetail />} />
           <Route path="/challenge/:id/checkin" element={<CheckIn />} />
-          <Route path="/graduation/:id" element={<Graduation />} />
+          <Route path="/completion/:id" element={<Completion />} />
           <Route path="/dex" element={<Dex />} />
           <Route path="/dex/:id" element={<DexDetail />} />
+          <Route path="/goods/:id" element={<GoodsCreate />} />
         </Routes>
         <DemoControls />
       </div>

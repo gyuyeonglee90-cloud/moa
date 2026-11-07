@@ -6,3 +6,14 @@ export const AUTO_CHECKIN_MIN_RATE = 0.7
 export const AUTO_CHECKIN_MAX_RATE = 0.9
 
 export const DEMO_STAMPS = ['👍', '🔥', '💪', '✅'] as const
+
+/** 좋은 흔적(반짝이) 최대 개수 (PRD 5-3) */
+export const MAX_GOOD_TRACES = 7
+
+export const PART_LABELS: Record<import('../types').PartId, string> = {
+  hair: '머리 선',
+  eyeL: '왼쪽 눈',
+  eyeR: '오른쪽 눈',
+  cheek: '볼',
+  mouth: '입',
+}
