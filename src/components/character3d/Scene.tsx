@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { useFrame, useThree } from '@react-three/fiber'
+import { useFrame, useThree, type ThreeEvent } from '@react-three/fiber'
 import * as THREE from 'three'
 import type { PartId } from '../../types'
 import { BODY_COLOR_HEX } from '../../domain/characterColor'
@@ -17,7 +17,7 @@ const DRAG_SENSITIVITY = 0.008
 type Props = Pick<Character3DProps, 'template' | 'color' | 'parts' | 'bodyFill' | 'sparkles' | 'onPartTap'>
 
 export default function Scene({ template, color, parts, bodyFill, sparkles, onPartTap }: Props) {
-  const { gl, pointer } = useThree()
+  const { pointer } = useThree()
   const groupRef = useRef<THREE.Group>(null)
 
   const rotationY = useRef(0)
@@ -27,25 +27,19 @@ export default function Scene({ template, color, parts, bodyFill, sparkles, onPa
   const lastX = useRef(0)
 
   const squashKickRef = useRef(0)
-  const partTappedRecently = useRef(false)
 
   const tiltX = useRef(0)
   const tiltZ = useRef(0)
 
-  function handlePartTap(partId: PartId) {
-    partTappedRecently.current = true
-    onPartTap?.(partId)
+  // 몸통(부위가 아닌 영역)을 눌렀을 때만 드래그/탭이 시작된다.
+  // 부위는 PartMesh의 onPointerDown에서 stopPropagation()으로 이 핸들러에 닿지 못하게 막는다.
+  function handleBodyPointerDown(e: ThreeEvent<PointerEvent>) {
+    dragging.current = true
+    dragMoved.current = 0
+    lastX.current = e.clientX
   }
 
   useEffect(() => {
-    const dom = gl.domElement
-
-    function onPointerDown(e: PointerEvent) {
-      dragging.current = true
-      dragMoved.current = 0
-      lastX.current = e.clientX
-    }
-
     function onPointerMove(e: PointerEvent) {
       if (!dragging.current) return
       const x = e.clientX
@@ -57,23 +51,20 @@ export default function Scene({ template, color, parts, bodyFill, sparkles, onPa
     }
 
     function onPointerUp() {
-      // 드래그가 거의 없고 방금 부위를 탭한 것도 아니면 몸통 탭으로 간주해 말랑하게 반응
-      if (dragging.current && dragMoved.current < DRAG_TAP_THRESHOLD && !partTappedRecently.current) {
+      if (dragging.current && dragMoved.current < DRAG_TAP_THRESHOLD) {
+        // 드래그 없이 몸통만 눌렀다 뗐으면 탭으로 간주해 말랑하게 반응한다
         squashKickRef.current -= 0.9
       }
-      partTappedRecently.current = false
       dragging.current = false
     }
 
-    dom.addEventListener('pointerdown', onPointerDown)
     window.addEventListener('pointermove', onPointerMove)
     window.addEventListener('pointerup', onPointerUp)
     return () => {
-      dom.removeEventListener('pointerdown', onPointerDown)
       window.removeEventListener('pointermove', onPointerMove)
       window.removeEventListener('pointerup', onPointerUp)
     }
-  }, [gl])
+  }, [])
 
   useFrame((_, delta) => {
     const dt = Math.min(delta, 1 / 30)
@@ -106,15 +97,10 @@ export default function Scene({ template, color, parts, bodyFill, sparkles, onPa
         template={template}
         bodyFill={bodyFill}
         squashKickRef={squashKickRef}
+        onPointerDown={handleBodyPointerDown}
       />
       {PART_IDS_ORDER.map((partId: PartId) => (
-        <PartMesh
-          key={partId}
-          partId={partId}
-          color={partColor}
-          state={parts[partId]}
-          onTap={handlePartTap}
-        />
+        <PartMesh key={partId} partId={partId} color={partColor} state={parts[partId]} onTap={onPartTap} />
       ))}
       <Sparkles count={sparkles} />
     </group>

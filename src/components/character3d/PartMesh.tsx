@@ -87,7 +87,9 @@ export default function PartMesh({ partId, color, state, onTap }: PartMeshProps)
     ghostMaterial.opacity = (1 - state.progress) * 0.5
   })
 
-  function handleClick(e: { stopPropagation: () => void }) {
+  function handlePointerDown(e: { stopPropagation: () => void }) {
+    // 부위에서 포인터 이벤트를 먼저 가로채서 몸통 쪽 드래그/탭 판정으로 번지지 않게 한다.
+    // 실제 3D 모델(GLB)로 교체해도 부위 메시가 이 핸들러를 그대로 들고 있으면 구조가 유지된다.
     e.stopPropagation()
     tapTimeRef.current = elapsedRef.current
     onTap?.(partId)
@@ -95,7 +97,7 @@ export default function PartMesh({ partId, color, state, onTap }: PartMeshProps)
 
   return (
     <group position={position}>
-      <mesh ref={meshRef} geometry={geometry} onClick={handleClick}>
+      <mesh ref={meshRef} geometry={geometry} onPointerDown={handlePointerDown}>
         <meshStandardMaterial color={color} transparent roughness={0.5} />
       </mesh>
       <mesh ref={ghostRef} geometry={geometry} scale={1.02}>

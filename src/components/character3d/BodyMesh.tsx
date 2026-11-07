@@ -1,7 +1,8 @@
 import { useMemo, useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, type ThreeEvent } from '@react-three/fiber'
 import * as THREE from 'three'
 import type { Template } from '../../types'
+import { useBodyGeometry } from './bodyModel'
 
 interface BodyMeshProps {
   color: string
@@ -9,6 +10,7 @@ interface BodyMeshProps {
   bodyFill: number
   /** 몸통을 탭했을 때 외부(Scene)에서 1을 써주면 그 프레임에 스쿼시가 시작된다 */
   squashKickRef: { current: number }
+  onPointerDown: (e: ThreeEvent<PointerEvent>) => void
 }
 
 /** 템플릿별 몸통 비율(디자인 확정 전 임시 값) */
@@ -18,10 +20,17 @@ const TEMPLATE_SCALE: Record<Template, [number, number, number]> = {
   chubby: [1.1, 1.05, 1.1],
 }
 
-export default function BodyMesh({ color, template, bodyFill, squashKickRef }: BodyMeshProps) {
+export default function BodyMesh({
+  color,
+  template,
+  bodyFill,
+  squashKickRef,
+  onPointerDown,
+}: BodyMeshProps) {
   const unfilledRef = useRef<THREE.Mesh>(null)
   const filledRef = useRef<THREE.Mesh>(null)
 
+  const bodyGeometry = useBodyGeometry(template)
   const clipPlane = useMemo(() => new THREE.Plane(new THREE.Vector3(0, -1, 0), 0), [])
 
   const breathPhase = useRef(0)
@@ -62,8 +71,7 @@ export default function BodyMesh({ color, template, bodyFill, squashKickRef }: B
         <sphereGeometry args={[1, 32, 32]} />
         <meshStandardMaterial color="#f1f1f4" roughness={0.9} />
       </mesh>
-      <mesh ref={filledRef}>
-        <sphereGeometry args={[1.001, 32, 32]} />
+      <mesh ref={filledRef} geometry={bodyGeometry} onPointerDown={onPointerDown}>
         <meshStandardMaterial
           color={color}
           roughness={0.6}
