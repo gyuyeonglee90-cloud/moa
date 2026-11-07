@@ -21,7 +21,7 @@ export default function ChallengeCreate() {
       <h1 className="mt-2 text-h1 text-ink">챌린지 만들기</h1>
 
       <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
-        <p className="text-body text-ink-3">
+        <p className="max-w-xs text-body text-ink-3">
           지금은 체험용 크루만 볼 수 있어요.
           <br />
           부위 나누기는 가이드 체험에서 해볼 수 있어요.

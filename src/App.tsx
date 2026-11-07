@@ -15,7 +15,7 @@ const GoodsCreate = lazy(() => import('./pages/GoodsCreate'))
 
 function PhoneApp() {
   return (
-    <div className="relative mx-auto flex h-full max-w-[480px] flex-col overflow-hidden bg-canvas">
+    <div className="relative flex h-full w-full flex-col overflow-hidden bg-canvas lg:mx-auto lg:max-w-[480px]">
       <div className="relative flex-1 overflow-hidden">
         <Suspense fallback={null}>
           <Routes>
@@ -40,9 +40,9 @@ function PhoneApp() {
 
 export default function App() {
   return (
-    <div className="flex min-h-screen w-full items-center justify-center gap-12 bg-canvas px-0 md:bg-[#EDEBE8] md:px-8">
-      {/* 데스크톱 포트폴리오 레이아웃: 왼쪽 소개 (PRD 8). PhoneApp은 한 번만 마운트하고 폰 프레임은 CSS로만 둘렀다 */}
-      <div className="hidden max-w-md md:block">
+    <div className="flex min-h-screen w-full items-center justify-center bg-canvas lg:gap-12 lg:bg-[#EDEBE8] lg:px-8">
+      {/* 데스크톱 포트폴리오 레이아웃: 왼쪽 소개 (PRD 8). 1024px(lg) 미만에서는 프레임 없이 100% 폭. PhoneApp은 한 번만 마운트하고 폰 프레임은 CSS로만 둘렀다 */}
+      <div className="hidden max-w-md lg:block">
         <p className="text-wordmark text-ink">moa</p>
         <h1 className="mt-4 text-display text-ink">
           친구들과 목표 캐릭터를 나눠 맡아
@@ -56,7 +56,7 @@ export default function App() {
         </p>
       </div>
 
-      <div className="h-screen w-full overflow-hidden bg-canvas md:my-10 md:h-[780px] md:w-[390px] md:shrink-0 md:rounded-[40px] md:border-8 md:border-ink md:shadow-level2">
+      <div className="h-screen w-full max-w-full overflow-hidden bg-canvas lg:my-10 lg:h-[780px] lg:w-[390px] lg:shrink-0 lg:rounded-[40px] lg:border-8 lg:border-ink lg:shadow-level2">
         <PhoneApp />
       </div>
     </div>

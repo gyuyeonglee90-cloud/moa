@@ -19,12 +19,21 @@ export default function Onboarding() {
 
       <div className="w-full max-w-xs rounded-2xl bg-surface p-4 shadow-level1">
         <p className="text-eyebrow text-ink-3">지우의 초대장</p>
-        <p className="mt-2 text-title text-ink">
-          "같이 '뽀짝이' 키워볼래? 다 같이 만든 캐릭터가 어떻게 완성되는지 보여주고 싶어!"
+
+        {/* 목표 캐릭터 '뽀짝이'를 점선(고스트) 상태로 미리 보여준다 — 아직 아무도 그리지 않은 상태 */}
+        <div
+          role="img"
+          aria-label="목표 캐릭터 뽀짝이, 아직 아무도 그리지 않은 점선 상태"
+          className="mx-auto mt-3 h-24 w-24 rounded-full border-2 border-dashed border-ink-4"
+          style={{ background: 'rgba(143, 224, 90, 0.12)' }}
+        />
+
+        <p className="mt-3 text-title text-ink">
+          "우리 같이 '뽀짝이' 완성할래? 각자 한 부위씩 맡아서 7일 동안 그려 나가는 거야!"
         </p>
       </div>
 
-      <p className="text-body text-ink-2">
+      <p className="max-w-xs text-body text-ink-2">
         친구들과 목표 캐릭터를 나눠 맡아 함께 완성하는 챌린지, MOA예요.
       </p>
 
@@ -34,10 +43,7 @@ export default function Onboarding() {
       >
         크루 합류하기
       </button>
-      <button
-        onClick={() => navigate('/home')}
-        className="text-body-sm text-ink-3 underline"
-      >
+      <button onClick={() => navigate('/home')} className="text-body-sm text-ink-3 underline">
         그냥 둘러보기
       </button>
     </div>

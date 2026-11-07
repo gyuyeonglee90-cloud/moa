@@ -7,10 +7,10 @@
 
 > 데스크톱에서 열면 왼쪽에 소개, 오른쪽에 폰 프레임 안의 앱이 뜨는 포트폴리오 뷰로 보입니다. 모바일에서는 전체 화면 웹앱입니다.
 
-<!-- 스크린샷 3장 이상 (QA가 캡처한 뒤 아래에 추가)
-![온보딩/투어](./docs/screenshots/01-onboarding.png)
-![챌린지 상세 — 캐릭터와 흔적](./docs/screenshots/02-challenge-detail.png)
-![완성식 / 도감](./docs/screenshots/03-completion.png)
+<!-- 스크린샷 3장 이상 (QA가 docs/qa/screenshots/에 캡처한 뒤 아래에 추가)
+![온보딩/투어](./docs/qa/screenshots/01-onboarding.png)
+![챌린지 상세 — 캐릭터와 흔적](./docs/qa/screenshots/02-challenge-detail.png)
+![완성식 / 도감](./docs/qa/screenshots/03-completion.png)
 -->
 
 ## 문제 → 해결
