@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
 import { TOUR_CHALLENGE_ID, TOUR_DAY_NOTE, TOUR_STEPS } from '../data/tour'
 
@@ -9,6 +9,7 @@ import { TOUR_CHALLENGE_ID, TOUR_DAY_NOTE, TOUR_STEPS } from '../data/tour'
  */
 export default function CoachPill() {
   const navigate = useNavigate()
+  const location = useLocation()
   const tourStep = useAppStore((s) => s.tourStep)
   const setTourStep = useAppStore((s) => s.setTourStep)
   const skipTour = useAppStore((s) => s.skipTour)
@@ -26,6 +27,14 @@ export default function CoachPill() {
       navigate(`/completion/${TOUR_CHALLENGE_ID}`)
     }
   }, [challenge?.currentDay, challenge?.status, tourStep, setTourStep, navigate])
+
+  // 완성식(6단계) 풍선은 완성식 화면을 벗어나면(굿즈로 이동 등) 자동으로 사라진다 —
+  // 그렇지 않으면 굿즈 예약 완료 화면에서 화면 자체 버튼과 코치 풍선이 중복 노출됐었다.
+  useEffect(() => {
+    if (tourStep === 6 && !location.pathname.startsWith('/completion/')) {
+      setTourStep(null)
+    }
+  }, [tourStep, location.pathname, setTourStep])
 
   if (tourStep === null) return null
 

@@ -20,7 +20,7 @@ export default function DexDetail() {
   const result = challenge.completionResult
 
   return (
-    <div className="flex h-full flex-col overflow-y-auto bg-hero p-4">
+    <main className="flex h-full flex-col overflow-y-auto bg-hero p-4">
       <button onClick={() => navigate(-1)} className="self-start text-body-sm text-ink-3">
         ← 뒤로
       </button>
@@ -69,6 +69,6 @@ export default function DexDetail() {
           굿즈로 만들기
         </button>
       )}
-    </div>
+    </main>
   )
 }

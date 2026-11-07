@@ -14,7 +14,7 @@ export default function ChallengeCreate() {
   }
 
   return (
-    <div className="flex h-full flex-col p-4">
+    <main className="flex h-full flex-col p-4">
       <button onClick={() => navigate(-1)} className="self-start text-body-sm text-ink-3">
         ← 뒤로
       </button>
@@ -33,6 +33,6 @@ export default function ChallengeCreate() {
           가이드 다시 보기
         </button>
       </div>
-    </div>
+    </main>
   )
 }

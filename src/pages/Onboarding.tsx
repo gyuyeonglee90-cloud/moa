@@ -14,8 +14,11 @@ export default function Onboarding() {
   }
 
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-6 bg-hero p-6 text-center">
-      <p className="text-wordmark text-ink">moa</p>
+    <main className="flex h-full flex-col items-center justify-center gap-6 bg-hero p-6 text-center">
+      <h1 className="sr-only">MOA 초대장</h1>
+      <p className="text-wordmark text-ink" aria-hidden="true">
+        moa
+      </p>
 
       <div className="w-full max-w-xs rounded-2xl bg-surface p-4 shadow-level1">
         <p className="text-eyebrow text-ink-3">지우의 초대장</p>
@@ -46,6 +49,6 @@ export default function Onboarding() {
       <button onClick={() => navigate('/home')} className="text-body-sm text-ink-3 underline">
         그냥 둘러보기
       </button>
-    </div>
+    </main>
   )
 }

@@ -14,12 +14,14 @@ interface AppState {
   challenges: Challenge[]
   lastCompletedChallengeId: string | null
   tourStep: TourStep | null
+  pokedKeys: string[]
 
   checkIn: (challengeId: string, data: Omit<CheckIn, 'userId' | 'day'>) => void
   advanceDay: (challengeId: string) => void
   reserveGoods: (challengeId: string, type: GoodsType, donationCategory: DonationCategory) => void
   resetDemo: () => void
   clearLastCompleted: () => void
+  poke: (challengeId: string, userId: string) => void
 
   startTour: () => void
   skipTour: () => void
@@ -47,6 +49,7 @@ export const useAppStore = create<AppState>()(
       challenges: cloneInitialChallenges(),
       lastCompletedChallengeId: null,
       tourStep: null,
+      pokedKeys: [],
 
       checkIn: (challengeId, data) => {
         set((state) => ({
@@ -98,10 +101,20 @@ export const useAppStore = create<AppState>()(
           challenges: cloneInitialChallenges(),
           lastCompletedChallengeId: null,
           tourStep: null,
+          pokedKeys: [],
         })
       },
 
       clearLastCompleted: () => set({ lastCompletedChallengeId: null }),
+
+      poke: (challengeId, userId) => {
+        const challenge = get().challenges.find((c) => c.id === challengeId)
+        if (!challenge) return
+        const key = `${challengeId}:${challenge.currentDay}:${userId}`
+        set((state) =>
+          state.pokedKeys.includes(key) ? state : { pokedKeys: [...state.pokedKeys, key] },
+        )
+      },
 
       startTour: () => {
         set((state) => ({

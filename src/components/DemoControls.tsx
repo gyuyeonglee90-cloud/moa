@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
+import { TOUR_CHALLENGE_ID } from '../data/tour'
 
 export default function DemoControls() {
   const navigate = useNavigate()
@@ -11,6 +12,8 @@ export default function DemoControls() {
   const lastCompletedChallengeId = useAppStore((s) => s.lastCompletedChallengeId)
   const clearLastCompleted = useAppStore((s) => s.clearLastCompleted)
   const tourStep = useAppStore((s) => s.tourStep)
+  const startTour = useAppStore((s) => s.startTour)
+  const setTourStep = useAppStore((s) => s.setTourStep)
   const [expanded, setExpanded] = useState(false)
 
   const firstOngoing = challenges.find((c) => c.status === 'ongoing')
@@ -18,6 +21,14 @@ export default function DemoControls() {
   function handleNextDay() {
     if (!firstOngoing) return
     advanceDay(firstOngoing.id)
+  }
+
+  function handleReplayTour() {
+    // 투어 상태(해당 챌린지·단계)만 처음으로 되돌리고, 다른 챌린지/굿즈 등 나머지 데이터는 그대로 둔다
+    startTour()
+    setTourStep(2)
+    setExpanded(false)
+    navigate(`/challenge/${TOUR_CHALLENGE_ID}`)
   }
 
   function handleReset() {
@@ -68,6 +79,12 @@ export default function DemoControls() {
         className="h-11 rounded-full bg-ink px-4 text-caption font-semibold text-white shadow-level2 disabled:opacity-40"
       >
         다음 날로 넘기기 ⏩
+      </button>
+      <button
+        onClick={handleReplayTour}
+        className="h-11 rounded-full border border-hairline bg-surface px-4 text-caption font-semibold text-ink-2 shadow-level1"
+      >
+        가이드 다시 보기
       </button>
       <button
         onClick={handleReset}

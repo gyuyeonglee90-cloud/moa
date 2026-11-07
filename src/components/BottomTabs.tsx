@@ -19,7 +19,7 @@ export default function BottomTabs() {
           role="tab"
           className={({ isActive }) =>
             `relative flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full text-title ${
-              isActive ? 'text-ink' : 'text-ink-4'
+              isActive ? 'text-ink' : 'text-ink-3'
             }`
           }
         >

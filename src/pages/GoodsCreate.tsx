@@ -37,7 +37,7 @@ export default function GoodsCreate() {
 
   if (reserved || challenge.goodsOrder) {
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-3 p-6 text-center">
+      <main className="flex h-full flex-col items-center justify-center gap-3 p-6 text-center">
         <div className="text-5xl" aria-hidden="true">
           🎁
         </div>
@@ -49,12 +49,12 @@ export default function GoodsCreate() {
         >
           도감으로 이동
         </button>
-      </div>
+      </main>
     )
   }
 
   return (
-    <div className="flex h-full flex-col gap-4 overflow-y-auto p-4">
+    <main className="flex h-full flex-col gap-4 overflow-y-auto p-4">
       <button onClick={() => navigate(-1)} className="self-start text-body-sm text-ink-3">
         ← 뒤로
       </button>
@@ -117,6 +117,6 @@ export default function GoodsCreate() {
       >
         가상 주문 예약하기
       </button>
-    </div>
+    </main>
   )
 }

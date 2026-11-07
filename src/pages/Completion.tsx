@@ -19,7 +19,7 @@ export default function Completion() {
   const result = challenge.completionResult
 
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-3 bg-hero p-6 text-center">
+    <main className="flex h-full flex-col items-center justify-center gap-3 bg-hero p-6 text-center">
       <p className="text-eyebrow text-accent-strong">완성식</p>
       <h1 className="text-display text-ink">우리만의 {challenge.character.name}</h1>
 
@@ -54,6 +54,6 @@ export default function Completion() {
           도감으로 이동
         </button>
       </div>
-    </div>
+    </main>
   )
 }

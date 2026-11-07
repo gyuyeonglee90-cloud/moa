@@ -11,7 +11,7 @@ export default function Dex() {
   const completed = challenges.filter((c) => c.status === 'completed')
 
   return (
-    <div className="flex h-full flex-col overflow-y-auto pb-24">
+    <main className="flex h-full flex-col overflow-y-auto pb-24">
       <header className="p-4">
         <h1 className="text-h1 text-ink">도감</h1>
       </header>
@@ -46,6 +46,6 @@ export default function Dex() {
       </div>
 
       <BottomTabs />
-    </div>
+    </main>
   )
 }
