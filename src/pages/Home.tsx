@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
 import { bodyFill } from '../domain/progress'
+import { CHAR_COLOR_TOKENS } from '../domain/characterColor'
 import BottomTabs from '../components/BottomTabs'
 
 export default function Home() {
@@ -9,23 +10,27 @@ export default function Home() {
   const ongoing = challenges.filter((c) => c.status === 'ongoing')
 
   return (
-    <div className="flex h-full flex-col pb-16">
+    <div className="flex h-full flex-col overflow-y-auto pb-24">
       <header className="p-4">
-        <h1 className="text-xl font-bold">홈</h1>
+        <h1 className="text-h1 text-ink">홈</h1>
       </header>
 
-      <div className="flex-1 space-y-3 overflow-y-auto p-4">
+      <div className="grid grid-cols-2 gap-sm px-4">
         {ongoing.map((challenge) => {
           const fill = bodyFill(challenge)
+          const tint = CHAR_COLOR_TOKENS[challenge.character.color].tint
           return (
             <button
               key={challenge.id}
               onClick={() => navigate(`/challenge/${challenge.id}`)}
-              className="w-full rounded-2xl border border-gray-200 p-4 text-left"
+              className="rounded-2xl p-4 text-left shadow-level0"
+              style={{ background: tint }}
             >
-              <div className="font-semibold">{challenge.title}</div>
-              <div className="text-sm text-gray-500">
-                {challenge.currentDay}/{challenge.totalDays}일차 · 완성도 {Math.round(fill * 100)}%
+              <div className="text-h3 text-ink">{challenge.character.name}</div>
+              <div className="mt-1 text-caption text-ink-2">{challenge.title}</div>
+              <div className="mt-2 text-caption text-ink-3">
+                {challenge.currentDay}/{challenge.totalDays}일차 · 완성도{' '}
+                {Math.round(fill * 100)}%
               </div>
             </button>
           )
@@ -33,7 +38,7 @@ export default function Home() {
 
         <button
           onClick={() => navigate('/challenge/new')}
-          className="w-full rounded-2xl border border-dashed border-gray-300 p-4 text-center text-gray-500"
+          className="col-span-2 rounded-2xl border border-dashed border-field-border p-4 text-center text-body text-ink-3"
         >
           + 새 챌린지 만들기
         </button>

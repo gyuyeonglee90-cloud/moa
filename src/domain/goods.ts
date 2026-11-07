@@ -23,6 +23,9 @@ export const DONATION_CATEGORIES: DonationCategoryInfo[] = [
   { id: 'environment', label: '환경' },
 ]
 
+/** 가상의 사회적기업 파트너 이름 (실제 기관 아님 — D19, PO 지정) */
+export const VIRTUAL_PARTNER_NAME = '모아손 공방'
+
 /** 판매가 배분 구조 (PRD 5-5, 상생 구조·가상) */
 export const PRICE_SPLIT = {
   production: 55,
