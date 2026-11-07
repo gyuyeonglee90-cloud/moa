@@ -32,7 +32,7 @@ const challengeA: Challenge = {
   ownerId: ME,
   character: buildCharacter(
     'round',
-    'mint',
+    'sky',
     { hair: F1, eyeL: ME, eyeR: F2, cheek: F3, mouth: F4 },
     '모아밍',
   ),
@@ -55,7 +55,7 @@ const challengeB: Challenge = {
   ownerId: F1,
   character: buildCharacter(
     'soft',
-    'yellow',
+    'sun',
     { hair: F2, eyeL: F3, eyeR: F4, cheek: ME, mouth: F1 },
     '챕터비',
   ),
@@ -108,7 +108,7 @@ const completedTraced = buildCompletedChallenge({
   ownerId: F3,
   character: buildCharacter(
     'chubby',
-    'purple',
+    'lavender',
     { hair: F1, eyeL: ME, eyeR: F2, cheek: F3, mouth: F4 },
     '플랭키',
   ),
@@ -129,7 +129,7 @@ const completedClean = buildCompletedChallenge({
   ownerId: F2,
   character: buildCharacter(
     'round',
-    'blue',
+    'lime',
     { hair: F2, eyeL: F3, eyeR: ME, cheek: F4, mouth: F1 },
     '물방울',
   ),
@@ -147,7 +147,7 @@ const completedHeavy = buildCompletedChallenge({
   ownerId: F4,
   character: buildCharacter(
     'soft',
-    'orange',
+    'coral',
     { hair: F3, eyeL: F4, eyeR: F1, cheek: ME, mouth: F2 },
     '모닝스타',
   ),

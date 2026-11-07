@@ -1,12 +1,7 @@
 export type Template = 'round' | 'soft' | 'chubby'
 
-export type BodyColor =
-  | 'pink'
-  | 'yellow'
-  | 'mint'
-  | 'blue'
-  | 'purple'
-  | 'orange'
+/** DESIGN_SYSTEM.md 1-3 캐릭터 팔레트(장식 전용) */
+export type BodyColor = 'lime' | 'pink' | 'coral' | 'sky' | 'sun' | 'lavender'
 
 export type PartId = 'hair' | 'eyeL' | 'eyeR' | 'cheek' | 'mouth'
 
