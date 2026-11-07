@@ -3,9 +3,10 @@ export type Template = 'round' | 'soft' | 'chubby'
 /** DESIGN_SYSTEM.md 1-3 캐릭터 팔레트(장식 전용) */
 export type BodyColor = 'lime' | 'pink' | 'coral' | 'sky' | 'sun' | 'lavender'
 
-export type PartId = 'hair' | 'eyeL' | 'eyeR' | 'cheek' | 'mouth'
+/** D26: 아기 동물 캐릭터의 부위 5개 (왼쪽 귀 / 오른쪽 귀 / 눈 / 코·입 / 꼬리) */
+export type PartId = 'earL' | 'earR' | 'eyes' | 'nose' | 'tail'
 
-export const PART_IDS: PartId[] = ['hair', 'eyeL', 'eyeR', 'cheek', 'mouth']
+export const PART_IDS: PartId[] = ['earL', 'earR', 'eyes', 'nose', 'tail']
 
 /** 부위 담당자. 전원 인증한 날만 그려지는 '공동' 부위는 'shared' */
 export type PartOwner = string | 'shared'

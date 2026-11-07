@@ -13,7 +13,7 @@ function makeChallenge(overrides: Partial<Challenge> = {}): Challenge {
     character: {
       template: 'round',
       color: 'pink',
-      parts: { hair: 'f1', eyeL: 'me', eyeR: 'shared', cheek: 'f2', mouth: 'f3' },
+      parts: { earL: 'f1', earR: 'me', eyes: 'shared', nose: 'f2', tail: 'f3' },
       name: '모아',
     },
     checkIns: [],

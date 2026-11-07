@@ -13,7 +13,7 @@ function makeChallenge(overrides: Partial<Challenge> = {}): Challenge {
     character: {
       template: 'round',
       color: 'pink',
-      parts: { hair: 'f1', eyeL: 'me', eyeR: 'shared', cheek: 'f2', mouth: 'f3' },
+      parts: { earL: 'f1', earR: 'me', eyes: 'shared', nose: 'f2', tail: 'f3' },
       name: '모아',
     },
     checkIns: [],
@@ -53,7 +53,7 @@ describe('traces', () => {
       currentDay: 3,
       checkIns: [{ userId: 'f1', day: 1 }],
     })
-    const trace = traces(challenge, 'hair')
+    const trace = traces(challenge, 'earL')
     expect(trace.missedCount).toBe(2)
     expect(trace.scale).toBe(1.25)
     expect(trace.rotate).toBe(15)
@@ -69,7 +69,7 @@ describe('traces', () => {
         { userId: 'f3', day: 1 },
       ],
     })
-    const trace = traces(challenge, 'eyeR')
+    const trace = traces(challenge, 'eyes')
     expect(trace.missedCount).toBe(1)
   })
 })

@@ -11,9 +11,9 @@ export const DEMO_STAMPS = ['👍', '🔥', '💪', '✅'] as const
 export const MAX_GOOD_TRACES = 7
 
 export const PART_LABELS: Record<import('../types').PartId, string> = {
-  hair: '머리 선',
-  eyeL: '왼쪽 눈',
-  eyeR: '오른쪽 눈',
-  cheek: '볼',
-  mouth: '입',
+  earL: '왼쪽 귀',
+  earR: '오른쪽 귀',
+  eyes: '눈',
+  nose: '코·입',
+  tail: '꼬리',
 }

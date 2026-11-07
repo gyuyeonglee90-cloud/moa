@@ -100,7 +100,14 @@ export default function Scene({ template, color, parts, bodyFill, sparkles, onPa
         onPointerDown={handleBodyPointerDown}
       />
       {PART_IDS_ORDER.map((partId: PartId) => (
-        <PartMesh key={partId} partId={partId} color={partColor} state={parts[partId]} onTap={onPartTap} />
+        <PartMesh
+          key={partId}
+          partId={partId}
+          template={template}
+          color={partColor}
+          state={parts[partId]}
+          onTap={onPartTap}
+        />
       ))}
       <Sparkles count={sparkles} />
     </group>

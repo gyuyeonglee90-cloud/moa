@@ -13,7 +13,7 @@ function makeChallenge(overrides: Partial<Challenge> = {}): Challenge {
     character: {
       template: 'round',
       color: 'pink',
-      parts: { hair: 'f1', eyeL: 'me', eyeR: 'shared', cheek: 'f2', mouth: 'f3' },
+      parts: { earL: 'f1', earR: 'me', eyes: 'shared', nose: 'f2', tail: 'f3' },
       name: '모아',
     },
     checkIns: [],
@@ -31,7 +31,7 @@ describe('partProgress', () => {
       ],
     })
     // 2 / 5
-    expect(partProgress(challenge, 'hair')).toBe(0.4)
+    expect(partProgress(challenge, 'earL')).toBe(0.4)
   })
 
   it("'shared' 부위는 전원 인증한 날만 센다", () => {
@@ -45,7 +45,7 @@ describe('partProgress', () => {
       ],
     })
     // day1만 전원 인증 → 1/5
-    expect(partProgress(challenge, 'eyeR')).toBe(0.2)
+    expect(partProgress(challenge, 'eyes')).toBe(0.2)
   })
 
   it('1을 넘지 않는다', () => {
@@ -54,7 +54,7 @@ describe('partProgress', () => {
       totalDays: 5,
       checkIns: Array.from({ length: 10 }, (_, i) => ({ userId: 'f1', day: i + 1 })),
     })
-    expect(partProgress(challenge, 'hair')).toBe(1)
+    expect(partProgress(challenge, 'earL')).toBe(1)
   })
 })
 

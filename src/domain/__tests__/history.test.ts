@@ -20,7 +20,7 @@ function makeChallenge(overrides: Partial<Challenge> = {}): Challenge {
     character: {
       template: 'round',
       color: 'pink',
-      parts: { hair: 'f1', eyeL: 'me', eyeR: 'shared', cheek: 'f2', mouth: 'f3' },
+      parts: { earL: 'f1', earR: 'me', eyes: 'shared', nose: 'f2', tail: 'f3' },
       name: '모아',
     },
     checkIns: [],
@@ -42,9 +42,9 @@ describe('history', () => {
   it('담당자가 못 채운 날은 그 사람 이름이 담긴 흔적 이벤트를 남긴다', () => {
     const challenge = makeChallenge({ currentDay: 1, checkIns: [] })
     const events = history(challenge, users)
-    const hairEvent = events.find((e) => e.partId === 'hair')
-    expect(hairEvent?.message).toContain('서준')
-    expect(hairEvent?.day).toBe(1)
+    const earLEvent = events.find((e) => e.partId === 'earL')
+    expect(earLEvent?.message).toContain('서준')
+    expect(earLEvent?.day).toBe(1)
   })
 
   it('전원 인증한 날은 good 이벤트를 남긴다', () => {

@@ -33,7 +33,7 @@ const challengeA: Challenge = {
   character: buildCharacter(
     'round',
     'sky',
-    { hair: F1, eyeL: ME, eyeR: F2, cheek: F3, mouth: F4 },
+    { earL: F1, earR: ME, eyes: F2, nose: F3, tail: F4 },
     '모아밍',
   ),
   checkIns: flattenDays([
@@ -56,7 +56,7 @@ const challengeB: Challenge = {
   character: buildCharacter(
     'soft',
     'sun',
-    { hair: F2, eyeL: F3, eyeR: F4, cheek: ME, mouth: F1 },
+    { earL: F2, earR: F3, eyes: F4, nose: ME, tail: F1 },
     '챕터비',
   ),
   checkIns: flattenDays(
@@ -88,7 +88,7 @@ function buildCompletedChallenge(params: {
     goodsOrder: params.goodsOrder,
   }
 
-  const partIds: PartId[] = ['hair', 'eyeL', 'eyeR', 'cheek', 'mouth']
+  const partIds: PartId[] = ['earL', 'earR', 'eyes', 'nose', 'tail']
   base.completionResult = {
     similarity: similarity(base),
     totalCheckIns: base.checkIns.length,
@@ -109,7 +109,7 @@ const completedTraced = buildCompletedChallenge({
   character: buildCharacter(
     'chubby',
     'lavender',
-    { hair: F1, eyeL: ME, eyeR: F2, cheek: F3, mouth: F4 },
+    { earL: F1, earR: ME, eyes: F2, nose: F3, tail: F4 },
     '플랭키',
   ),
   presentByDay: [
@@ -130,7 +130,7 @@ const completedClean = buildCompletedChallenge({
   character: buildCharacter(
     'round',
     'lime',
-    { hair: F2, eyeL: F3, eyeR: ME, cheek: F4, mouth: F1 },
+    { earL: F2, earR: F3, eyes: ME, nose: F4, tail: F1 },
     '물방울',
   ),
   presentByDay: Array.from({ length: 9 }, () => [ME, F1, F2, F3, F4]).concat([
@@ -148,7 +148,7 @@ const completedHeavy = buildCompletedChallenge({
   character: buildCharacter(
     'soft',
     'coral',
-    { hair: F3, eyeL: F4, eyeR: F1, cheek: ME, mouth: F2 },
+    { earL: F3, earR: F4, eyes: F1, nose: ME, tail: F2 },
     '모닝스타',
   ),
   presentByDay: [

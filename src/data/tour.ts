@@ -18,7 +18,7 @@ export function buildTourChallenge(): Challenge {
     character: {
       template: 'round',
       color: 'lime',
-      parts: { hair: JIWOO, eyeL: CURRENT_USER_ID, eyeR: 'shared', cheek: MINJI, mouth: SEOJUN },
+      parts: { earL: CURRENT_USER_ID, earR: 'shared', eyes: MINJI, nose: SEOJUN, tail: JIWOO },
       name: '뽀짝이',
     },
     checkIns: [],
@@ -46,7 +46,7 @@ export interface TourStepInfo {
 
 export const TOUR_STEPS: Record<TourStep, TourStepInfo> = {
   1: { step: 1, message: '지우가 초대장을 보냈어요. 크루에 합류해서 목표 캐릭터 "뽀짝이"를 만나보세요.' },
-  2: { step: 2, message: '남은 부위 중 "왼쪽 눈"을 당신이 맡았어요. 지우는 머리 선, 민지는 볼, 서준이는 입을 맡았고, 오른쪽 눈은 다 같이 그려요.' },
+  2: { step: 2, message: '남은 부위 중 "왼쪽 귀"를 당신이 맡았어요. 지우는 꼬리, 민지는 눈, 서준이는 코·입을 맡았고, 오른쪽 귀는 다 같이 그려요.' },
   3: { step: 3, message: '첫 인증을 해볼까요? 사진이나 스탬프 + 한 줄 메모면 충분해요.' },
   4: { step: 4, message: '"다음 날로"를 눌러서 7일을 함께 지나가볼게요.' },
   5: { step: 5, message: '오늘은 5일차예요. 하루 쉬어볼까요? 쉬어도 괜찮아요 — 어떤 흔적이 남는지 같이 봐요.' },
@@ -55,6 +55,6 @@ export const TOUR_STEPS: Record<TourStep, TourStepInfo> = {
 
 export const TOUR_DAY_NOTE: Record<number, string> = {
   3: '3일차 · 크루 전원 인증 → 반짝이가 떴어요!',
-  4: '4일차 · 서준이 쉬어간 날 → 입이 25% 커졌어요',
-  5: '5일차 · 내가 쉬어간 날 → 내 왼쪽 눈이 25% 커졌어요',
+  4: '4일차 · 서준이 쉬어간 덕분에 코·입이 25% 커졌어요',
+  5: '5일차 · 오늘 쉬어간 덕분에 왼쪽 귀가 25% 커져서 짝짝이 귀가 됐어요',
 }
