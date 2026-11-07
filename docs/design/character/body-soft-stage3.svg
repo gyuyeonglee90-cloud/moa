@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+<!-- MOA body soft stage3 - fill=currentColor, scale 1.0 about (100,178) -->
+<ellipse cx="100" cy="180" rx="54.0" ry="7.0" fill="#3D3450" opacity="0.08"/>
+<ellipse cx="76" cy="172" rx="15" ry="9" fill="currentColor" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="124" cy="172" rx="15" ry="9" fill="currentColor" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="34" cy="136" rx="9" ry="14" transform="rotate(30 34 136)" fill="currentColor" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="166" cy="136" rx="9" ry="14" transform="rotate(-30 166 136)" fill="currentColor" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M32 166 C26 118 54 62 100 62 C146 62 174 118 168 166 C165 178 35 178 32 166 Z" fill="currentColor" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="70" cy="90" rx="14" ry="8" transform="rotate(-28 70 90)" fill="#FFFFFF" opacity="0.5"/>
+<ellipse cx="100" cy="150" rx="34" ry="16" fill="#FFFFFF" opacity="0.35"/>
+</svg>

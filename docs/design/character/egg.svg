@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+<!-- MOA egg - spots use currentColor (body color shows through) -->
+<ellipse cx="100" cy="180" rx="45.9" ry="6.1" fill="#3D3450" opacity="0.08"/>
+<path d="M100 56 C136 56 154 108 152 136 C150 162 128 176 100 176 C72 176 50 162 48 136 C46 108 64 56 100 56 Z" fill="#FFF9F0" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="80" cy="104" r="11" fill="currentColor" opacity="0.8"/>
+<circle cx="124" cy="92" r="7" fill="currentColor" opacity="0.8"/>
+<circle cx="118" cy="142" r="13" fill="currentColor" opacity="0.8"/>
+<circle cx="76" cy="150" r="6" fill="currentColor" opacity="0.8"/>
+<circle cx="136" cy="120" r="4" fill="currentColor" opacity="0.8"/>
+<path d="M64 120 l10 -8 l10 8 l10 -8 l10 8 l10 -8 l10 8 l10 -8 l10 8" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+<ellipse cx="80" cy="78" rx="10" ry="6" transform="rotate(-35 80 78)" fill="#FFFFFF" opacity="0.9"/>
+</svg>

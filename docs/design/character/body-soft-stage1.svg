@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+<!-- MOA body soft stage1 - fill=currentColor, scale 0.62 about (100,178) -->
+<ellipse cx="100" cy="180" rx="33.5" ry="4.7" fill="#3D3450" opacity="0.08"/>
+<g transform="translate(100 178) scale(0.62) translate(-100 -178)">
+<path d="M32 166 C26 118 54 62 100 62 C146 62 174 118 168 166 C165 178 35 178 32 166 Z" fill="currentColor" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="70" cy="90" rx="14" ry="8" transform="rotate(-28 70 90)" fill="#FFFFFF" opacity="0.5"/>
+<path d="M100 62 q-4 -12 4 -16" stroke="#3D3450" stroke-width="4" stroke-linecap="round"/>
+</g>
+</svg>

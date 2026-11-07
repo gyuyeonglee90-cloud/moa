@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+<!-- MOA body round stage3 - fill=currentColor, scale 1.0 about (100,178) -->
+<ellipse cx="100" cy="180" rx="54.0" ry="7.0" fill="#3D3450" opacity="0.08"/>
+<ellipse cx="76" cy="172" rx="15" ry="9" fill="currentColor" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="124" cy="172" rx="15" ry="9" fill="currentColor" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="40" cy="130" rx="9" ry="14" transform="rotate(30 40 130)" fill="currentColor" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="160" cy="130" rx="9" ry="14" transform="rotate(-30 160 130)" fill="currentColor" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="100" cy="116" rx="62" ry="60" fill="currentColor" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="74" cy="84" rx="14" ry="8" transform="rotate(-28 74 84)" fill="#FFFFFF" opacity="0.5"/>
+<ellipse cx="100" cy="148" rx="30" ry="18" fill="#FFFFFF" opacity="0.35"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+<!-- prop 4 별봉 -->
+<path d="M154 152 L170 104" stroke="#3D3450" stroke-width="4" stroke-linecap="round"/>
+<path d="M172.0 77.0 L176.1 86.3 L186.3 87.4 L178.7 94.2 L180.8 104.1 L172.0 99.0 L163.2 104.1 L165.3 94.2 L157.7 87.4 L167.9 86.3 Z" fill="#FFD97A" stroke="#3D3450" stroke-width="3.5" stroke-linejoin="round"/>
+<circle cx="190" cy="76" r="2.5" fill="#FFD97A"/><circle cx="152" cy="74" r="2" fill="#FFD97A"/>
+</svg>

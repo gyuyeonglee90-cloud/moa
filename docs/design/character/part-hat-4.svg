@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+<!-- hat 4 리본 -->
+<path d="M100 58 C82 36 62 42 68 58 C72 72 90 66 100 58 Z" fill="#FF8FA3" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M100 58 C118 36 138 42 132 58 C128 72 110 66 100 58 Z" fill="#FF8FA3" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="100" cy="58" r="8" fill="#FF6F8A" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

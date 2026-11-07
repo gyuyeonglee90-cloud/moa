@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+<!-- prop 3 깃발 -->
+<path d="M160 152 V84" stroke="#3D3450" stroke-width="4" stroke-linecap="round"/>
+<path d="M160 86 L190 98 L160 110 Z" fill="#6A5AE0" stroke="#3D3450" stroke-width="3.5" stroke-linejoin="round"/>
+<circle cx="160" cy="82" r="4" fill="#FFD97A" stroke="#3D3450" stroke-width="2.5"/>
+</svg>

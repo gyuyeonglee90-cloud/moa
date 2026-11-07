@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+<!-- hat 2 고깔 -->
+<g transform="rotate(10 100 64)">
+<path d="M76 66 L100 10 L124 66 Z" fill="#FFB8D9" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="94" cy="50" r="3.5" fill="#FFFFFF"/><circle cx="108" cy="40" r="3" fill="#FFFFFF"/><circle cx="102" cy="58" r="3" fill="#FFFFFF"/><circle cx="100" cy="28" r="2.5" fill="#FFFFFF"/>
+<circle cx="100" cy="10" r="7" fill="#FFD97A" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+</svg>
