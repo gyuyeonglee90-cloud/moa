@@ -1,7 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-<!-- fx sparkle - stage3 완성형 반짝이. .spk-N 그룹별로 깜빡임 애니메이션 -->
-<g class="spk spk-1"><path d="M34 39 Q37.08 46.92 45 50 Q37.08 53.08 34 61 Q30.92 53.08 23 50 Q30.92 46.92 34 39 Z" fill="#FFD97A" stroke="#3D3450" stroke-width="2" stroke-linejoin="round"/></g>
-<g class="spk spk-2"><path d="M150 13 Q151.96 18.04 157 20 Q151.96 21.96 150 27 Q148.04 21.96 143 20 Q148.04 18.04 150 13 Z" fill="#FFD97A" stroke="#3D3450" stroke-width="2" stroke-linejoin="round"/></g>
-<g class="spk spk-3"><path d="M20 121 Q21.96 126.04 27 128 Q21.96 129.96 20 135 Q18.04 129.96 13 128 Q18.04 126.04 20 121 Z" fill="#FFD97A" stroke="#3D3450" stroke-width="2" stroke-linejoin="round"/></g>
-<g class="spk spk-4"><path d="M184 159 Q186.52 165.48 193 168 Q186.52 170.52 184 177 Q181.48 170.52 175 168 Q181.48 165.48 184 159 Z" fill="#FFD97A" stroke="#3D3450" stroke-width="2" stroke-linejoin="round"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true">
+<!-- 좋은 흔적 반짝이 7개. 전원 인증한 날마다 spark-1부터 순서대로 display 켬 -->
+<g id="spark-1" class="spark" data-cx="178" data-cy="44"><path d="M178 32 Q180 42 190 44 Q180 46 178 56 Q176 46 166 44 Q176 42 178 32 Z" fill="#000"/></g>
+<g id="spark-2" class="spark" data-cx="22" data-cy="66"><path d="M22 54 Q24 64 34 66 Q24 68 22 78 Q20 68 10 66 Q20 64 22 54 Z" fill="#000"/></g>
+<g id="spark-3" class="spark" data-cx="186" data-cy="122"><path d="M186 110 Q188 120 198 122 Q188 124 186 134 Q184 124 174 122 Q184 120 186 110 Z" fill="#000"/></g>
+<g id="spark-4" class="spark" data-cx="14" data-cy="150"><path d="M14 138 Q16 148 26 150 Q16 152 14 162 Q12 152 2 150 Q12 148 14 138 Z" fill="#000"/></g>
+<g id="spark-5" class="spark" data-cx="150" data-cy="14"><path d="M150 2 Q152 12 162 14 Q152 16 150 26 Q148 16 138 14 Q148 12 150 2 Z" fill="#000"/></g>
+<g id="spark-6" class="spark" data-cx="46" data-cy="18"><path d="M46 6 Q48 16 58 18 Q48 20 46 30 Q44 20 34 18 Q44 16 46 6 Z" fill="#000"/></g>
+<g id="spark-7" class="spark" data-cx="180" data-cy="180"><path d="M180 168 Q182 178 192 180 Q182 182 180 192 Q178 182 168 180 Q178 178 180 168 Z" fill="#000"/></g>
 </svg>

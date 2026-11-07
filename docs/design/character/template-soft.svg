@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="말랑 캐릭터 템플릿">
+<!-- MOA template v3 · soft(말랑) · 색은 CSS 변수 char-light·base·deep (앞에 하이픈 2개) · id 접두사 moa-soft- (인스턴스마다 고유 접미사 필요) -->
+<defs>
+  <radialGradient id="moa-soft-grad" cx="36%" cy="30%" r="78%">
+    <stop offset="0" stop-color="var(--char-light, #E4FBC9)"/>
+    <stop offset=".48" stop-color="var(--char-base, #8FE05A)"/>
+    <stop offset="1" stop-color="var(--char-deep, #3FB82E)"/>
+  </radialGradient>
+  <filter id="moa-soft-soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.6"/></filter>
+  <clipPath id="moa-soft-fillclip"><rect id="moa-soft-fillrect" x="0" y="38" width="200" height="162"/></clipPath>
+</defs>
+<ellipse id="shadow" cx="100" cy="190" rx="56" ry="6" fill="#000" opacity=".06"/>
+<g id="body" data-cx="100" data-cy="110" data-top="38" data-bottom="182">
+<g class="goal" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"><path d="M100 38 C150 38 172 98 170 138 C168 174 136 182 100 182 C64 182 32 174 30 138 C28 98 50 38 100 38 Z"/></g>
+<g class="fill" clip-path="url(#moa-soft-fillclip)" fill="url(#moa-soft-grad)" filter="url(#moa-soft-soft)"><path d="M100 38 C150 38 172 98 170 138 C168 174 136 182 100 182 C64 182 32 174 30 138 C28 98 50 38 100 38 Z"/></g>
+</g>
+<g id="hair" data-cx="108" data-cy="30">
+<path class="goal" d="M100 46 C96 24 116 14 126 26 C134 36 120 44 112 36" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="ink" d="M100 46 C96 24 116 14 126 26 C134 36 120 44 112 36" stroke="#000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" pathLength="100"/>
+</g>
+<g id="eyeL" data-cx="78" data-cy="104">
+<circle class="goal" cx="78" cy="104" r="16" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<circle class="fill" cx="78" cy="104" r="16" fill="#fff" opacity=".92"/>
+<circle class="fill" cx="80" cy="106" r="9" fill="#000"/>
+<circle class="fill" cx="77" cy="102" r="2.6" fill="#fff"/>
+</g>
+<g id="eyeR" data-cx="122" data-cy="104">
+<circle class="goal" cx="122" cy="104" r="16" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<circle class="fill" cx="122" cy="104" r="16" fill="#fff" opacity=".92"/>
+<circle class="fill" cx="124" cy="106" r="9" fill="#000"/>
+<circle class="fill" cx="121" cy="102" r="2.6" fill="#fff"/>
+</g>
+<g id="cheek" data-cx="100" data-cy="132">
+<ellipse class="goal" cx="56" cy="132" rx="11" ry="7" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<ellipse class="fill" cx="56" cy="132" rx="12" ry="7" fill="var(--char-deep, #3FB82E)" opacity=".55"/>
+<ellipse class="goal" cx="144" cy="132" rx="11" ry="7" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<ellipse class="fill" cx="144" cy="132" rx="12" ry="7" fill="var(--char-deep, #3FB82E)" opacity=".55"/>
+</g>
+<g id="mouth" data-cx="100" data-cy="144">
+<path class="goal" d="M86 140 Q100 152 114 140" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="ink" d="M86 140 Q100 152 114 140" stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" pathLength="100"/>
+</g>
+<g id="hair-wavy" data-cx="108" data-cy="30" style="display:none">
+<path class="goal" d="M100 46 q-6 -8 0 -14 t2 -12 t12 -4 t10 10 t-6 10 t-6 0" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="ink" d="M100 46 q-6 -8 0 -14 t2 -12 t12 -4 t10 10 t-6 10 t-6 0" stroke="#000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" pathLength="100"/>
+</g>
+<g id="eyeL-wavy" data-cx="78" data-cy="104" style="display:none">
+<circle class="goal" cx="78" cy="104" r="16" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="fill" d="M94.0 104.0L95.6 106.3L95.5 108.7L93.6 110.5L90.9 111.4L88.9 112.4L88.2 114.2L87.9 116.9L87.0 119.5L84.9 120.7L82.3 120.0L79.9 118.5L78.0 117.8L76.1 118.5L73.7 120.0L71.1 120.7L69.0 119.5L68.1 116.9L67.8 114.2L67.1 112.4L65.1 111.4L62.4 110.5L60.5 108.7L60.4 106.3L62.0 104.0L63.9 102.1L64.6 100.4L64.0 98.2L63.2 95.4L63.5 92.9L65.6 91.6L68.4 91.5L71.0 91.8L72.7 91.1L74.0 89.1L75.7 86.8L78.0 85.8L80.3 86.8L82.0 89.1L83.3 91.1L85.0 91.8L87.6 91.5L90.4 91.6L92.5 92.9L92.8 95.4L92.0 98.2L91.4 100.4L92.1 102.1L94.0 104.0Z" fill="#fff" opacity=".92"/>
+<circle class="fill" cx="80" cy="106" r="9" fill="#000"/>
+<circle class="fill" cx="77" cy="102" r="2.6" fill="#fff"/>
+</g>
+<g id="eyeR-wavy" data-cx="122" data-cy="104" style="display:none">
+<circle class="goal" cx="122" cy="104" r="16" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="fill" d="M138.0 104.0L139.6 106.3L139.5 108.7L137.6 110.5L134.9 111.4L132.9 112.4L132.2 114.2L131.9 116.9L131.0 119.5L128.9 120.7L126.3 120.0L123.9 118.5L122.0 117.8L120.1 118.5L117.7 120.0L115.1 120.7L113.0 119.5L112.1 116.9L111.8 114.2L111.1 112.4L109.1 111.4L106.4 110.5L104.5 108.7L104.4 106.3L106.0 104.0L107.9 102.1L108.6 100.4L108.0 98.2L107.2 95.4L107.5 92.9L109.6 91.6L112.4 91.5L115.0 91.8L116.7 91.1L118.0 89.1L119.7 86.8L122.0 85.8L124.3 86.8L126.0 89.1L127.3 91.1L129.0 91.8L131.6 91.5L134.4 91.6L136.5 92.9L136.8 95.4L136.0 98.2L135.4 100.4L136.1 102.1L138.0 104.0Z" fill="#fff" opacity=".92"/>
+<circle class="fill" cx="124" cy="106" r="9" fill="#000"/>
+<circle class="fill" cx="121" cy="102" r="2.6" fill="#fff"/>
+</g>
+<g id="cheek-wavy" data-cx="100" data-cy="132" style="display:none">
+<ellipse class="goal" cx="56" cy="132" rx="11" ry="7" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="fill" d="M67.0 132.0L68.1 133.0L68.1 134.1L66.7 134.8L64.9 135.3L63.5 135.7L63.0 136.5L62.8 137.7L62.2 138.8L60.8 139.3L59.0 139.0L57.3 138.3L56.0 138.0L54.7 138.3L53.0 139.0L51.2 139.3L49.8 138.8L49.2 137.7L49.0 136.5L48.5 135.7L47.1 135.3L45.3 134.8L43.9 134.1L43.9 133.0L45.0 132.0L46.3 131.2L46.8 130.4L46.4 129.5L45.8 128.3L46.1 127.1L47.5 126.6L49.4 126.5L51.2 126.7L52.3 126.4L53.3 125.5L54.4 124.5L56.0 124.0L57.6 124.5L58.7 125.5L59.7 126.4L60.8 126.7L62.6 126.5L64.5 126.6L65.9 127.1L66.2 128.3L65.6 129.5L65.2 130.4L65.7 131.2L67.0 132.0Z" fill="var(--char-deep, #3FB82E)" opacity=".6"/>
+<ellipse class="goal" cx="144" cy="132" rx="11" ry="7" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="fill" d="M155.0 132.0L156.1 133.0L156.1 134.1L154.7 134.8L152.9 135.3L151.5 135.7L151.0 136.5L150.8 137.7L150.2 138.8L148.8 139.3L147.0 139.0L145.3 138.3L144.0 138.0L142.7 138.3L141.0 139.0L139.2 139.3L137.8 138.8L137.2 137.7L137.0 136.5L136.5 135.7L135.1 135.3L133.3 134.8L131.9 134.1L131.9 133.0L133.0 132.0L134.3 131.2L134.8 130.4L134.4 129.5L133.8 128.3L134.1 127.1L135.5 126.6L137.4 126.5L139.2 126.7L140.3 126.4L141.3 125.5L142.4 124.5L144.0 124.0L145.6 124.5L146.7 125.5L147.7 126.4L148.8 126.7L150.6 126.5L152.5 126.6L153.9 127.1L154.2 128.3L153.6 129.5L153.2 130.4L153.7 131.2L155.0 132.0Z" fill="var(--char-deep, #3FB82E)" opacity=".6"/>
+</g>
+<g id="mouth-wavy" data-cx="100" data-cy="144" style="display:none">
+<path class="goal" d="M84 144 q4 -7 8 0 t8 0 t8 0 t8 0" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="ink" d="M84 144 q4 -7 8 0 t8 0 t8 0 t8 0" stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" pathLength="100"/>
+</g>
+</svg>

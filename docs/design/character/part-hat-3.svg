@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-<!-- hat 3 새싹 -->
-<path d="M100 64 Q99 48 100 38" stroke="#3FAF7A" stroke-width="5" stroke-linecap="round"/>
-<path d="M100 40 C86 22 64 26 66 40 C76 50 92 48 100 40 Z" fill="#8FE0B4" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M100 38 C112 16 140 18 138 34 C128 48 108 46 100 38 Z" fill="#8FE0B4" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-</svg>

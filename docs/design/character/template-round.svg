@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="동글 캐릭터 템플릿">
+<!-- MOA template v3 · round(동글) · 색은 CSS 변수 char-light·base·deep (앞에 하이픈 2개) · id 접두사 moa-round- (인스턴스마다 고유 접미사 필요) -->
+<defs>
+  <radialGradient id="moa-round-grad" cx="36%" cy="30%" r="78%">
+    <stop offset="0" stop-color="var(--char-light, #E4FBC9)"/>
+    <stop offset=".48" stop-color="var(--char-base, #8FE05A)"/>
+    <stop offset="1" stop-color="var(--char-deep, #3FB82E)"/>
+  </radialGradient>
+  <filter id="moa-round-soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.6"/></filter>
+  <clipPath id="moa-round-fillclip"><rect id="moa-round-fillrect" x="0" y="38" width="200" height="162"/></clipPath>
+</defs>
+<ellipse id="shadow" cx="100" cy="190" rx="56" ry="6" fill="#000" opacity=".06"/>
+<g id="body" data-cx="100" data-cy="110" data-top="38" data-bottom="182">
+<g class="goal" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"><circle cx="100" cy="110" r="72"/></g>
+<g class="fill" clip-path="url(#moa-round-fillclip)" fill="url(#moa-round-grad)" filter="url(#moa-round-soft)"><circle cx="100" cy="110" r="72"/></g>
+</g>
+<g id="hair" data-cx="100" data-cy="44">
+<path class="goal" d="M46 76 C70 30 122 22 156 50" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="ink" d="M46 76 C70 30 122 22 156 50" stroke="#000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" pathLength="100"/>
+</g>
+<g id="eyeL" data-cx="76" data-cy="100">
+<circle class="goal" cx="76" cy="100" r="17" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<circle class="fill" cx="76" cy="100" r="17" fill="#fff" opacity=".92"/>
+<circle class="fill" cx="78" cy="102" r="9" fill="#000"/>
+<circle class="fill" cx="75" cy="98" r="2.6" fill="#fff"/>
+</g>
+<g id="eyeR" data-cx="124" data-cy="100">
+<circle class="goal" cx="124" cy="100" r="17" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<circle class="fill" cx="124" cy="100" r="17" fill="#fff" opacity=".92"/>
+<circle class="fill" cx="126" cy="102" r="9" fill="#000"/>
+<circle class="fill" cx="123" cy="98" r="2.6" fill="#fff"/>
+</g>
+<g id="cheek" data-cx="100" data-cy="128">
+<ellipse class="goal" cx="60" cy="128" rx="11" ry="7" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<ellipse class="fill" cx="60" cy="128" rx="12" ry="7" fill="var(--char-deep, #3FB82E)" opacity=".55"/>
+<ellipse class="goal" cx="140" cy="128" rx="11" ry="7" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<ellipse class="fill" cx="140" cy="128" rx="12" ry="7" fill="var(--char-deep, #3FB82E)" opacity=".55"/>
+</g>
+<g id="mouth" data-cx="100" data-cy="140">
+<path class="goal" d="M82 134 Q100 154 118 134" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="ink" d="M82 134 Q100 154 118 134" stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" pathLength="100"/>
+</g>
+<g id="hair-wavy" data-cx="100" data-cy="44" style="display:none">
+<path class="goal" d="M46 76 q13 -26 27 -16 t27 -18 t27 -6 t29 14" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="ink" d="M46 76 q13 -26 27 -16 t27 -18 t27 -6 t29 14" stroke="#000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" pathLength="100"/>
+</g>
+<g id="eyeL-wavy" data-cx="76" data-cy="100" style="display:none">
+<circle class="goal" cx="76" cy="100" r="17" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="fill" d="M93.0 100.0L94.7 102.5L94.6 105.0L92.5 106.9L89.7 107.9L87.6 108.9L86.8 110.8L86.5 113.7L85.5 116.5L83.3 117.7L80.6 117.0L78.0 115.4L76.0 114.6L74.0 115.4L71.4 117.0L68.7 117.7L66.5 116.5L65.5 113.7L65.2 110.8L64.4 108.9L62.3 107.9L59.5 106.9L57.4 105.0L57.3 102.5L59.0 100.0L61.0 98.0L61.8 96.2L61.1 93.8L60.2 90.9L60.6 88.2L62.8 86.8L65.8 86.8L68.5 87.1L70.3 86.3L71.8 84.2L73.6 81.7L76.0 80.6L78.4 81.7L80.2 84.2L81.7 86.3L83.5 87.1L86.2 86.8L89.2 86.8L91.4 88.2L91.8 90.9L90.9 93.8L90.2 96.2L91.0 98.0L93.0 100.0Z" fill="#fff" opacity=".92"/>
+<circle class="fill" cx="78" cy="102" r="9" fill="#000"/>
+<circle class="fill" cx="75" cy="98" r="2.6" fill="#fff"/>
+</g>
+<g id="eyeR-wavy" data-cx="124" data-cy="100" style="display:none">
+<circle class="goal" cx="124" cy="100" r="17" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="fill" d="M141.0 100.0L142.7 102.5L142.6 105.0L140.5 106.9L137.7 107.9L135.6 108.9L134.8 110.8L134.5 113.7L133.5 116.5L131.3 117.7L128.6 117.0L126.0 115.4L124.0 114.6L122.0 115.4L119.4 117.0L116.7 117.7L114.5 116.5L113.5 113.7L113.2 110.8L112.4 108.9L110.3 107.9L107.5 106.9L105.4 105.0L105.3 102.5L107.0 100.0L109.0 98.0L109.8 96.2L109.1 93.8L108.2 90.9L108.6 88.2L110.8 86.8L113.8 86.8L116.5 87.1L118.3 86.3L119.8 84.2L121.6 81.7L124.0 80.6L126.4 81.7L128.2 84.2L129.7 86.3L131.5 87.1L134.2 86.8L137.2 86.8L139.4 88.2L139.8 90.9L138.9 93.8L138.2 96.2L139.0 98.0L141.0 100.0Z" fill="#fff" opacity=".92"/>
+<circle class="fill" cx="126" cy="102" r="9" fill="#000"/>
+<circle class="fill" cx="123" cy="98" r="2.6" fill="#fff"/>
+</g>
+<g id="cheek-wavy" data-cx="100" data-cy="128" style="display:none">
+<ellipse class="goal" cx="60" cy="128" rx="11" ry="7" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="fill" d="M71.0 128.0L72.1 129.0L72.1 130.1L70.7 130.8L68.9 131.3L67.5 131.7L67.0 132.5L66.8 133.7L66.2 134.8L64.8 135.3L63.0 135.0L61.3 134.3L60.0 134.0L58.7 134.3L57.0 135.0L55.2 135.3L53.8 134.8L53.2 133.7L53.0 132.5L52.5 131.7L51.1 131.3L49.3 130.8L47.9 130.1L47.9 129.0L49.0 128.0L50.3 127.2L50.8 126.4L50.4 125.5L49.8 124.3L50.1 123.1L51.5 122.6L53.4 122.5L55.2 122.7L56.3 122.4L57.3 121.5L58.4 120.5L60.0 120.0L61.6 120.5L62.7 121.5L63.7 122.4L64.8 122.7L66.6 122.5L68.5 122.6L69.9 123.1L70.2 124.3L69.6 125.5L69.2 126.4L69.7 127.2L71.0 128.0Z" fill="var(--char-deep, #3FB82E)" opacity=".6"/>
+<ellipse class="goal" cx="140" cy="128" rx="11" ry="7" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="fill" d="M151.0 128.0L152.1 129.0L152.1 130.1L150.7 130.8L148.9 131.3L147.5 131.7L147.0 132.5L146.8 133.7L146.2 134.8L144.8 135.3L143.0 135.0L141.3 134.3L140.0 134.0L138.7 134.3L137.0 135.0L135.2 135.3L133.8 134.8L133.2 133.7L133.0 132.5L132.5 131.7L131.1 131.3L129.3 130.8L127.9 130.1L127.9 129.0L129.0 128.0L130.3 127.2L130.8 126.4L130.4 125.5L129.8 124.3L130.1 123.1L131.5 122.6L133.4 122.5L135.2 122.7L136.3 122.4L137.3 121.5L138.4 120.5L140.0 120.0L141.6 120.5L142.7 121.5L143.7 122.4L144.8 122.7L146.6 122.5L148.5 122.6L149.9 123.1L150.2 124.3L149.6 125.5L149.2 126.4L149.7 127.2L151.0 128.0Z" fill="var(--char-deep, #3FB82E)" opacity=".6"/>
+</g>
+<g id="mouth-wavy" data-cx="100" data-cy="140" style="display:none">
+<path class="goal" d="M80 140 q5 -8 10 0 t10 0 t10 0 t10 0" stroke="#8A857F" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round" fill="none"/>
+<path class="ink" d="M80 140 q5 -8 10 0 t10 0 t10 0 t10 0" stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" pathLength="100"/>
+</g>
+</svg>

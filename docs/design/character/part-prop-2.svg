@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-<!-- prop 2 풍선 -->
-<path d="M158 146 Q172 118 166 84" stroke="#3D3450" stroke-width="2.5" stroke-linecap="round"/>
-<ellipse cx="168" cy="62" rx="17" ry="20" fill="#9CCBFF" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M164 84 l4 -3 l4 3 Z" fill="#9CCBFF" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-<ellipse cx="161" cy="54" rx="4" ry="6" transform="rotate(20 161 54)" fill="#FFFFFF" opacity="0.7"/>
-</svg>

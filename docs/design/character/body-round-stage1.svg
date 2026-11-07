@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-<!-- MOA body round stage1 - fill=currentColor, scale 0.62 about (100,178) -->
-<ellipse cx="100" cy="180" rx="33.5" ry="4.7" fill="#3D3450" opacity="0.08"/>
-<g transform="translate(100 178) scale(0.62) translate(-100 -178)">
-<ellipse cx="100" cy="116" rx="62" ry="60" fill="currentColor" stroke="#3D3450" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-<ellipse cx="74" cy="84" rx="14" ry="8" transform="rotate(-28 74 84)" fill="#FFFFFF" opacity="0.5"/>
-<path d="M100 56 q-4 -12 4 -16" stroke="#3D3450" stroke-width="4" stroke-linecap="round"/>
-</g>
-</svg>

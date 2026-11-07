@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-<!-- fx combo - 크루 콤보 진행 중 이펙트. .combo-N 그룹은 위로 떠오르는 루프 -->
-<ellipse cx="100" cy="182" rx="84" ry="12" stroke="#6A5AE0" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round" opacity="0.6"/>
-<g class="combo combo-1"><path d="M28 102.3 C16.799999999999997 95.3 21.7 86.9 28 92.85 C34.3 86.9 39.2 95.3 28 102.3 Z" fill="#FF8FA3"/></g>
-<g class="combo combo-2"><path d="M178 133.4 C168.4 127.4 172.6 120.2 178 125.3 C183.4 120.2 187.6 127.4 178 133.4 Z" fill="#B7A8FF"/></g>
-<g class="combo combo-3"><path d="M40 164.5 C32.0 159.5 35.5 153.5 40 157.75 C44.5 153.5 48.0 159.5 40 164.5 Z" fill="#FFD97A"/></g>
-</svg>
