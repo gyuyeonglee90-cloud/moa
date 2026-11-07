@@ -20,7 +20,7 @@ export default function DemoControls() {
 
   function handleReset() {
     const ok = window.confirm(
-      '데모를 처음 상태로 되돌려요. 지금까지의 인증, 흔적, 완성된 캐릭터가 모두 사라져요. 계속할까요?',
+      '인증 기록, 완성한 캐릭터, 굿즈 예약이 모두 처음 상태로 돌아가요. 되돌릴 수 없어요.',
     )
     if (!ok) return
     resetDemo()
