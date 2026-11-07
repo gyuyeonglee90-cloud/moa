@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
+import { bodyFill } from '../domain/progress'
 import BottomTabs from '../components/BottomTabs'
+import StaticThumbnail from '../components/character3d/StaticThumbnail'
 
 export default function Dex() {
   const navigate = useNavigate()
@@ -24,7 +26,10 @@ export default function Dex() {
                 onClick={() => navigate(`/dex/${challenge.id}`)}
                 className="rounded-2xl border border-gray-200 p-3 text-left"
               >
-                <div className="font-semibold">{challenge.character.name}</div>
+                <div className="h-20 w-full">
+                  <StaticThumbnail color={challenge.character.color} bodyFill={bodyFill(challenge)} />
+                </div>
+                <div className="mt-2 font-semibold">{challenge.character.name}</div>
                 <div className="text-xs text-gray-500">{challenge.title}</div>
               </button>
             ))}

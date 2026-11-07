@@ -1,5 +1,8 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
+import { bodyFill } from '../domain/progress'
+import { buildPartVisualMap } from '../domain/characterVisual'
+import Character3D from '../components/Character3D'
 
 export default function DexDetail() {
   const { id } = useParams<{ id: string }>()
@@ -23,6 +26,17 @@ export default function DexDetail() {
       </button>
       <h1 className="mt-2 text-xl font-bold">{challenge.character.name}</h1>
       <p className="text-sm text-gray-500">{challenge.title}</p>
+
+      <div className="mt-2 h-48 w-full">
+        <Character3D
+          template={challenge.character.template}
+          color={challenge.character.color}
+          parts={buildPartVisualMap(challenge)}
+          bodyFill={bodyFill(challenge)}
+          sparkles={result?.goodTraces ?? 0}
+          ariaLabel={`${challenge.character.name}, 완성된 캐릭터`}
+        />
+      </div>
 
       {result && (
         <>
